@@ -11,7 +11,7 @@ public class KafkaConfig {
     private Logger logger= LoggerFactory.getLogger(KafkaConfig.class);
 
     @KafkaListener(topics=AppConstants.LOCATION_UPDATE_TOPIC,groupId=AppConstants.GROUP_ID)
-    public void updatedLocation(String value){
+    public void updatedLocation(String value){ //this method will consume all realtime msgs from kafka server by listening
 logger.info(value);
     }
 }

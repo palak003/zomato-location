@@ -15,6 +15,8 @@ public class KafkaService {
     private Logger logger= LoggerFactory.getLogger(KafkaService.class);
 
     public boolean updateLocation(String location){
+        //false location-update api will be called and send msg in topic using kafka template
+        //it will be key-value having (topic-name,msg) in kafka server
         this.kafkaTemplate.send(AppConstants.LOCATION_TOPIC_NAME,location);
         this.logger.info("message produced");
         return true;
